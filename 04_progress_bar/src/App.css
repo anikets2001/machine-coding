@@ -1,0 +1,37 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.page-wrapper {
+  padding: 24px;
+}
+
+.progress-bar-wrapper {
+  margin: auto;
+  width: 100%;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.outer {
+  border: 1px solid gray;
+  border-radius: 12px;
+  width: 100%;
+  height: 30px;
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: green;
+  height: 100%;
+  border-radius: 10px;
+  color: #fff;
+}

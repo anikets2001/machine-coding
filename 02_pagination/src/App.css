@@ -1,0 +1,76 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.page-wrapper {
+  padding: 24px;
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+
+.card-wrapper {
+  border: 2px solid green;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.card-wrapper > .title-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+select{
+  padding: 8px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button {
+  background-color: transparent;
+  padding: 8px 16px;
+  border: 1px solid gray;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.disabled {
+  background-color: gray;
+  cursor: not-allowed;
+  color: #fff;
+}
+
+.description,
+.title {
+  white-space: nowrap;
+  width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.pagination-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 24px;
+  gap: 4px;
+}
+
+.pagination-btn {
+  border: 1px solid gray;
+  padding: 4px;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.curr-page {
+  background-color: green;
+  color: #fff;
+}

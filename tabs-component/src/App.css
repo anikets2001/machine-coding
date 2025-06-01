@@ -1,0 +1,76 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.tabs-wrapper {
+  padding: 16px;
+}
+
+.tabs-header-wrapper {
+  display: flex;
+  gap: 16px;
+  border-bottom: 2px solid gray;
+  width: fit-content;
+}
+
+.tab {
+  cursor: pointer;
+}
+
+.active {
+  border-bottom: 2px solid green;
+  color: green;
+  padding-bottom: 16px;
+  font-weight: 600;
+}
+
+.body-wrapper {
+  height: calc(100vh - 200px);
+  border: 1px solid gray;
+  margin-top: 16px;
+  padding: 16px;
+}
+
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.btn-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 16px;
+}
+
+button {
+  padding: 8px 16px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 16px;
+  margin-top: 16px;
+}
+
+.next-btn {
+  border: 1px solid green;
+  border-radius: 4px;
+  color: green;
+}
+
+.prev-btn {
+  border: 1px solid red;
+  border-radius: 4px;
+  color: red;
+}
+
+.submit-btn {
+  border: 1px solid green;
+  border-radius: 4px;
+  color: green;
+}

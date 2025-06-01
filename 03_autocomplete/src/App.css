@@ -1,0 +1,85 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.page-wrapper {
+  padding: 24px;
+}
+
+.searchbar-wrapper {
+  position: relative;
+  width: 196px;
+}
+
+.suggestion-wrapper {
+  position: absolute;
+  width: 100%;
+  max-height: 200px;
+  overflow-y: scroll;
+  background-color: #fff;
+  border-radius: 6px;
+  border: 1px solid gray;
+}
+
+input {
+  padding: 8px 16px;
+  border: 2px solid gray;
+  border-radius: 6px;
+  width: 100%;
+}
+
+li {
+  list-style-type: none;
+}
+
+.suggestion {
+  padding: 8px;
+}
+
+.recipies-wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-top: 24px;
+  max-height: calc(100vh - 150px);
+  overflow-y: scroll;
+}
+
+.recipi-card {
+  border: 2px solid green;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 12px;
+  padding: 16px;
+  width: 15%;
+  min-height: 375px;
+}
+
+.description,
+.title {
+  white-space: nowrap;
+  width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.image-wrapper {
+  margin: 16px 0px;
+  height: 250px;
+  width: 100%;
+}
+
+.image-wrapper > img {
+  height: 100%;
+  width: 100%;
+  border-radius: 12px;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
