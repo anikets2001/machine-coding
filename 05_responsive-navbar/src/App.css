@@ -1,0 +1,98 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar-wrapper {
+  padding: 16px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.navbar-wrapper > ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+ 
+ul > li {
+  list-style-type: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.avatar-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.avatar {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background-color: rgb(187, 187, 243);
+  color: #000;
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.responsive-navbar-wrapper {
+  display: none;
+  flex-direction: row-reverse;
+}
+
+.responsive-navbar {
+  padding: 16px;
+  display: none;
+  height: 100vh;
+  width: 300px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.responsive-navItems {
+  margin-top: 16px;
+}
+
+.btn-wrapper {
+  display: none;
+  align-items: center;
+  justify-content: flex-end;
+  margin: 16px;
+}
+
+.toggle-navbar-btn {
+  height: 30px;
+  border: none;
+  background-color: rgb(211, 211, 245);
+  color: #000;
+  padding: 8px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/*---- responsive classes start ---*/
+
+@media (max-width: 600px) {
+  .navbar-wrapper {
+    display: none;
+  }
+
+  .responsive-navbar-wrapper {
+    display: flex;
+  }
+
+  .btn-wrapper {
+    display: flex;
+  }
+
+  .responsive-navbar{
+    display: inline;
+  }
+}
+
+/*---- responsive classes end ---*/
