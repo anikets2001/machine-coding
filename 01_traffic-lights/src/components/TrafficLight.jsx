@@ -1,11 +1,12 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 
-const lights = ["red", "yellow", "green"];
-const durations = {
-  red: 3000,
-  green: 3000,
-  yellow: 1000,
-};
+const lightSequence = [
+  { color: "red", duration: 3000 },
+  { color: "green", duration: 3000 },
+  { color: "yellow", duration: 1000 },
+];
+
+const lightDisplayOrder = ["red", "green", "yellow"];
 
 const TrafficLight = () => {
   const timeoutRef = useRef(null);
@@ -13,52 +14,43 @@ const TrafficLight = () => {
   const [activeLight, setActiveLight] = useState(null);
 
   const runCycle = () => {
-    const currentLight = lights[indexRef.current];
-    setActiveLight(currentLight);
+    const current = lightSequence[indexRef.current];
+    setActiveLight(current.color);
 
     timeoutRef.current = setTimeout(() => {
-      indexRef.current = (indexRef.current + 1) % lights.length;
+      indexRef.current = (indexRef.current + 1) % lightSequence.length;
       runCycle();
-    }, durations[currentLight]);
+    }, current.duration);
   };
 
   const startCycle = () => {
     if (timeoutRef.current) return;
     runCycle();
   };
+
   const stopCycle = () => {
     clearTimeout(timeoutRef.current);
     timeoutRef.current = null;
+    setActiveLight(null);
   };
-
-  useEffect(() => {
-    return () => {
-      clearTimeout(timeoutRef.current);
-    };
-  }, []);
 
   return (
     <div style={{ padding: "24px" }}>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-        }}
-      >
-        {lights.map((color) => (
+      <div style={{ display: "flex", flexDirection: "column" }}>
+        {lightDisplayOrder.map((color) => (
           <div
             key={color}
             style={{
               height: "100px",
               width: "100px",
               borderRadius: "50%",
-              marginTop: "8px",
-              backgroundColor: color === activeLight ? color : "#ccc",
+              backgroundColor: color === activeLight ? color : "gray",
+              marginTop: "16px",
             }}
-          ></div>
+          />
         ))}
       </div>
+
       <div
         style={{
           width: "100%",
@@ -69,21 +61,30 @@ const TrafficLight = () => {
         }}
       >
         <button
+          style={{
+            padding: "8px",
+            color: "#fff",
+            marginLeft: "8px",
+            backgroundColor: timeoutRef.current ? "gray" : "green",
+            cursor: timeoutRef.current ? "not-allowed" : "pointer",
+          }}
+          disabled={timeoutRef.current}
           onClick={startCycle}
-          style={{ padding: "8px", backgroundColor: "green", color: "#fff" }}
         >
           Start
         </button>
         <button
-          onClick={stopCycle}
           style={{
             padding: "8px",
-            backgroundColor: "red",
             color: "#fff",
+            backgroundColor: activeLight === null ? "gray" : "red",
+            cursor: activeLight === null ? "not-allowed" : "pointer",
             marginLeft: "8px",
           }}
+          disabled={activeLight === null}
+          onClick={stopCycle}
         >
-          End
+          Stop
         </button>
       </div>
     </div>
