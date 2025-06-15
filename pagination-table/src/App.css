@@ -1,0 +1,16 @@
+.table-wrapper {
+    padding: 16px;
+}
+
+table{
+    border: 1px solid gray;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.pagination-wrapper {
+    margin-top: 16px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
